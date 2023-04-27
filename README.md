@@ -1,43 +1,44 @@
-# Hydrogen template: Hello World
+# hydrogen-hygraph-storefront
 
-Hydrogen is Shopify’s stack for headless commerce. Hydrogen is designed to dovetail with [Remix](https://remix.run/), Shopify’s full stack web framework. This template contains a **minimal setup** of components, queries and tooling to get started with Hydrogen.
+Integrating a headless content plaform with Shopify Hydrogen
 
-[Check out Hydrogen docs](https://shopify.dev/custom-storefronts/hydrogen)
-[Get familiar with Remix](https://remix.run/docs/en/v1)
+## Requirements
 
-## What's included
+- A Hygraph account
+- A Hygraph project with a model
+- A Shopify store
+- Node.js v16 or later
 
-- Remix
-- Hydrogen
-- Oxygen
-- Shopify CLI
-- ESLint
-- Prettier
-- GraphQL generator
-- TypeScript and JavaScript flavors
-- Minimal setup of components and routes
-
-## Getting started
-
-**Requirements:**
-
-- Node.js version 16.14.0 or higher
+### To run the project locally, clone it using the command:
 
 ```bash
-npm create @shopify/hydrogen@latest -- --template hello-world
+git clone https://github.com/kimanikevin254/hydrogen-hygraph-storefront.git
 ```
 
-Remember to update `.env` with your shop's domain and Storefront API token!
-
-## Building for production
+Install all the dependencies.
 
 ```bash
-npm run build
+npm install
 ```
 
-## Local development
+Rename the `.env.example` file.
 
 ```bash
+mv .env.example .env
+```
+
+Use your Shopify storefront values in the `.env` file.
+
+```bash
+PUBLIC_STOREFRONT_API_TOKEN=
+PUBLIC_STOREFRONT_API_VERSION=
+PUBLIC_STORE_DOMAIN=
+```
+
+Open `app/routes/index.js` and replace `<your-hygraph-content-api-endpoint>` with your Hygraph project content endpoint.
+
+Run the project.
+
+```
 npm run dev
 ```
-# hydrogen-hygraph-storefront
